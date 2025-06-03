@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendering Api</title>
+    <style>
+        table{
+        border-collapse : separate;
+        border-spacing : 15px;
+        }
+        th,td{
+         border : 1px;
+         padding : 8px;
+        }
+    </style>
+</head>
+<body>
+<h1 > Binding MB</h1>
+
+<p><b>name : </b><span th:text ="${name}"></span><br>
+    <b>age:</b><span th:text=" ${age}"></span> <br>
+    <b>spouse:</b><span th:text="${Spouse}"></span> <br>
+    <b>tag:</b><span th:text="${tag}"></span><br>
+    <b> Salary:</b><span th:text ="${salary}"></span><br>
+    <b> aka:</b><span th:text ="${nickname}"></span>
+</p>
+
+<strong>Box Office Results</strong>
+<ul>
+    <li th:each = "result :${Results}"th:text= "${result}" ></li>
+</ul>
+
+<b> Top Movie :</b><span th:text="${topMovie.name}"> </span> <br>
+<strong>Favourite Books</strong>
+<ul>
+    <li th:each = "book : ${books}" th:text="${book.key} +' : ' + ${book.value}">
+    </li>
+</ul>
+<br>
+<b> Movies</b>
+<br>
+<br>
+<table>
+    <thead>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Heroine</th>
+        <th>Genre</th>
+        <th>Collections</th>
+    </thead>
+    <tbody>
+        <tr th:each ="movie :${movies}">
+            <td th:text ="${movie.name}">     </td>
+            <td th:text ="${movie.director}">    </td>
+            <td th:text ="${movie.heroine}">     </td>
+            <td th:text ="${movie.genre}">      </td>
+            <td> Adhanta maku thelidu Rtc Cross roads lo fastest 1cr</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<br>
+<br>
+
+<b>Nick Names</b>
+<ul>
+    <li th:each = " nick : ${aka}" th:text="${nick}"></li>
+</ul>
+</body>
+</html>
+
+
